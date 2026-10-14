@@ -1,13 +1,5 @@
-cat > ~/Desktop/data/vercel.json << 'EOF'
 {
   "version": 2,
   "cleanUrls": true,
   "trailingSlash": false
 }
-EOF
-
-cd ~/Desktop/data
-cat vercel.json
-git add vercel.json
-git commit -m "Simplify vercel.json - rely on auto-detect"
-git push origin main --force
