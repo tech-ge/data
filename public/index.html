@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TechGeo — Data Entry & Analysis Training Registration</title>
+<meta name="description" content="Register for TechGeo's Data Entry & Analysis training. Certification available.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#10693f">
+<link rel="icon" href="/images/logo.png" type="image/png">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <img src="/images/logo.png" alt="TechGeo" class="logo" onerror="this.style.display='none'">
+    <h1>Welcome to TechGeo</h1>
+    <p>Fill in the form to join the training</p>
+  </div>
+  <div class="countdown" id="countdown">Loading countdown...</div>
+  <div class="draft-note">Your progress is saved automatically. Draft expires 4/11/2026.</div>
+  <form id="regForm" novalidate autocomplete="on">
+    <div class="alert" id="alertBox" role="alert"></div>
+    <div class="form-group">
+      <label for="fullName">Full Name <span class="req">*</span></label>
+      <input type="text" id="fullName" maxlength="120" required placeholder="John Doe">
+    </div>
+    <div class="form-group country-select">
+      <label for="countrySearch">Country <span class="req">*</span></label>
+      <span class="flag-preview fi" id="flagPreview"></span>
+      <input type="text" id="countrySearch" placeholder="Search country..." autocomplete="off" required>
+      <input type="hidden" id="countryCode">
+      <input type="hidden" id="countryName">
+      <div class="country-list" id="countryList"></div>
+    </div>
+    <div class="form-group">
+      <label for="idNumber">ID Number / Passport <span class="req">*</span></label>
+      <input type="text" id="idNumber" maxlength="40" required placeholder="12345678">
+    </div>
+    <div class="form-group">
+      <label for="email">Email <span class="req">*</span></label>
+      <input type="email" id="email" maxlength="120" required placeholder="you@example.com">
+    </div>
+    <div class="form-group">
+      <label for="phoneNumber">Phone Number <span class="req">*</span></label>
+      <div class="phone-wrap">
+        <input type="text" id="phoneCode" class="code" placeholder="+254" readonly>
+        <input type="tel" id="phoneNumber" class="number" maxlength="20" required placeholder="712345678">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="studyLevel">Current Study Level <span class="req">*</span></label>
+      <select id="studyLevel" required>
+        <option value="">-- Select --</option>
+        <option value="continuing">Continuing Student</option>
+        <option value="graduate">Graduate</option>
+      </select>
+    </div>
+    <div class="form-group" id="fieldGroup" style="display:none;">
+      <label for="fieldOfStudy">Field of Study <span class="req">*</span></label>
+      <input type="text" id="fieldOfStudy" maxlength="120" placeholder="e.g. Computer Science">
+    </div>
+    <div class="form-group" id="courseGroup" style="display:none;">
+      <label for="completedCourse">Completed Course <span class="req">*</span></label>
+      <input type="text" id="completedCourse" maxlength="120" placeholder="e.g. BSc Information Technology">
+    </div>
+    <div class="form-group">
+      <label for="guardianName">Guardian Name <span class="req">*</span></label>
+      <input type="text" id="guardianName" maxlength="120" required placeholder="Parent / Guardian full name">
+    </div>
+    <div class="form-group">
+      <label for="guardianPhone">Guardian Phone <span class="req">*</span></label>
+      <input type="tel" id="guardianPhone" maxlength="25" required placeholder="+254712345678">
+    </div>
+    <div class="fee-box">
+      <div class="amount" id="localFee">$24.00 USD</div>
+      <div class="base">Certification fee - <span id="feeNote">Select country for local amount</span></div>
+    </div>
+    <input type="hidden" id="localFeeInput">
+    <div class="terms">
+      <label class="check-label">
+        <input type="checkbox" id="agreedToTerms">
+        <span>I agree to attend classes actively and pay <strong>24 USD</strong> for certification before the first session.</span>
+      </label>
+    </div>
+    <button type="submit" class="btn-submit" id="submitBtn" disabled>Submit Application</button>
+    <p class="footnote">Your data is securely saved. Duplicate email or ID will be rejected.</p>
+  </form>
+</div>
+<script src="/js/currency.js"></script>
+<script src="/js/register.js"></script>
+</body>
+</html>
