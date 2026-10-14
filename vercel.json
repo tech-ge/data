@@ -1,19 +1,13 @@
+cat > ~/Desktop/data/vercel.json << 'EOF'
 {
   "version": 2,
   "cleanUrls": true,
-  "trailingSlash": false,
-  "builds": [
-    {
-      "src": "api/*.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "public/**",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    { "src": "/api/(.*)", "dest": "/api/$1" },
-    { "src": "/(.*)", "dest": "/public/$1" }
-  ]
+  "trailingSlash": false
 }
+EOF
+
+cd ~/Desktop/data
+cat vercel.json
+git add vercel.json
+git commit -m "Simplify vercel.json - rely on auto-detect"
+git push origin main --force
